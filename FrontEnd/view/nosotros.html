@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Cuchame Movistar</title>
+    <link rel="stylesheet" href="../estilos/EstilosUsuario.css">
+    <link rel="icon" href="../IMG/Icono_movistar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+    <ul>
+        <img src="../IMG/logo movistar(1).png" class="logo">
+        <li><a href="MenuUsuario.html">Inicio</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li id="Session"></li>
+    </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="mision-vision">
+            <img src="../IMG/logo movistar(2).png">
+            <h2>Visión y Misión de cuchame Movistar</h2>
+            <div class="cont-text">
+                <p>Desarrollar un software en el cual los usuarios puedan registrar su reclamo acerca de uno de sus servicios , mostrando además el estado de su solicitud de su reclamo.</p>
+            </div>    
+
+            <div class="cont-misv">
+            <div class="misv-card">
+                <h3>Misión</h3>
+                <img src="../IMG/mision.png" alt="">
+                <p>Ofrecer a los usuarios la capacidad de ingresar los inconvenientes y reclamos que presenten con el servicio que ofrece la empresa Movistar.</p>
+            </div>
+
+            <div class="misv-card">
+                <h3>Visión</h3>
+                <img src="../IMG/vision.png" alt="">
+                <p>Ser cada vez más una empresa comprometida con nuestros usuarios, imponernos nuevas metas cuando finalicemos otras, y ampliar cada vez el contenido que ofrecemos para un mejor gusto del usuario.</p>
+            </div>
+        </div>
+
+        </section>
+        <section class="beneficios">
+            <h2>No te pierdas de nuestros beneficios</h2>
+            <div class="cont-benef">
+                <div class="benef-card">
+                    <h4>Voz y SMS ilimitados</h4>
+                    <p>Minutos y sms ilimitados sin restricciones a todo operador.</p>
+                </div>
+
+                <div class="benef-card">
+                    <h4>Voz ilimitada</h4>
+                    <p>Minutos ilimitados para llamadas a USA y Canadá.</p>
+                </div>
+
+                <div class="benef-card">
+                    <h4>Apps ilimitadas</h4>
+                    <p>Megas nacionales ilimitados para apps y soluciones de negocio.</p>
+                </div>
+
+                <div class="benef-card">
+                    <h4>Whatsapp ilimitado</h4>
+                    <p>Megas nacionales ilimitados para apps y soluciones de negocio.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="integrantes">
+            <h2>Los integrantes de cuchame Movistar</h2>
+            <div class="cont-int">
+                <div class="int-card">
+                    <img src="../IMG/icon.jpg" class="img-icon">
+                    <p>Victor</p>
+                </div>
+
+                <div class="int-card">
+                    <img src="../IMG/icon.jpg" class="img-icon">
+                    <p>Anabel</p>
+                </div>
+
+                <div class="int-card">
+                    <img src="../IMG/icon.jpg" class="img-icon">
+                    <p>Valentino</p>
+                </div>
+
+                <div class="int-card">
+                    <img src="../IMG/icon.jpg" class="img-icon">
+                    <p>Axel</p>
+                </div>
+
+                <div class="int-card">
+                    <img src="../IMG/icon.jpg" class="img-icon">
+                    <p>Estefany</p>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer">
+                <div class="cont-footer">
+                    <h4>Direccion</h4>
+                    <p>Lima- Perú</p>
+                    
+                </div>
+                <div class="cont-footer">
+                    <h4>Reservaciones</h4>
+                    <p>Telefono: +5 999 999 999</p>
+                </div>
+                <div class="cont-footer">
+                    <h4>Equipo 4</h4>
+                    <p>Victor Vicente Palomino Torres</p>
+                    <p>Anabel Alexandra Huanca Moreano</p>
+                    <p>Valentino Guillermo Gomez Aguirre</p>
+                    <p>Axel David Jesús Chambilla</p>
+                    <p>Estefany Hinostroza Guzman</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; Todos los derechos reservados - equipo cuchame Movistar</p>
+        </footer>
+    </main>
+</body>
+<script>
+    var Database = JSON.parse(localStorage.getItem("DataCuchameMovistar"))
+    var btnSession = document.getElementById("Session")
+
+    if(btnSession){
+        document.getElementById("Session").addEventListener('click', ()=>{        
+            if(Database != null){
+                delete Database.UserActivo
+                localStorage.setItem('DataCuchameMovistar', JSON.stringify(Database))
+                window.location.replace("Login.html")
+            }        
+        })
+    }
+
+    window.onload = ()=>{
+        if(Database != null){
+            
+            if(Database.UserActivo){
+ 
+                var User = Database.UserActivo                
+                var Boton = '<button id="deslog">Cerrar sesión</button>'
+            }else{
+
+                var Boton = '<li><a href="Login.html">Login</a></li>'
+            }
+        }else{
+
+            var Boton = '<li><a href="Login.html">Login</a></li>'
+        }
+        document.getElementById("Session").innerHTML = Boton
+
+    }
+</script>
+</html>

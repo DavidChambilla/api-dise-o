@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclamos y quejas | Cuchame Movistar</title>
+    <link rel="stylesheet" href="../estilos/EstilosMenuUsuario.css">
+    <link rel="icon" href="../IMG/Icono_movistar.png">
+</head>
+<body>
+    <header>
+        <nav>
+    <ul>
+        <img src="../IMG/logo movistar(1).png" class="logo">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li id="Session"></li>
+    </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="quejas">
+            <h1 id="Saludo" style="color: white; font-size: 40px; text-align: center; margin-top: 70px; margin-bottom: 90px;"></h1>
+            <div class="container-quejas">                
+                <div class="quejas-card">
+                    <div>
+                    <h2>Ver Quejas</h2>
+                    
+                    <p>Visualiza todas tus quejas subidas por ti en la seccion ver quejas</p>
+                    <img src="../IMG/View.png" alt="view">
+                    <br>
+                    <br>
+                       <button> <a href="Quejas_view.html">Aceptar</a></button>
+                      
+                        </div>
+                    </div>
+
+                <div class="quejas-card">
+                    <div>
+                    <h2>Ingresar Quejas</h2>
+                    <p>Ingresa tus quejas la seccion ingresar queja</p>
+                    <img src="../IMG/20-208179_pen-and-paper-clip-art-at-clker-pen.png" alt="">
+                    <br>
+                    <button> <a href="Formulario_Quejas.html">Aceptar</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    var Database = JSON.parse(localStorage.getItem("DataCuchameMovistar"))
+    var btnSession = document.getElementById("Session")
+
+    if(btnSession){
+        document.getElementById("Session").addEventListener('click', ()=>{        
+            if(Database != null){
+                delete Database.UserActivo
+                localStorage.setItem('DataCuchameMovistar', JSON.stringify(Database))
+                window.location.replace("Login.html")
+            }        
+        })
+    }
+
+    window.onload = ()=>{
+        if(Database != null){
+            if(Database.UserActivo){
+                var User = Database.UserActivo
+                var Saludo = `Hola ${User.Nombre}, bienvenido a cuchamemovistar.`                
+                var Boton = '<button id="deslog">Cerrar sesión</button>'
+            }else{
+                var Saludo = "Bienvenido a cuchamemovistar"    
+                var Boton = '<li><a href="Login.html">Login</a></li>'
+            }
+        }else{
+            var Saludo = "Bienvenido a cuchamemovistar"
+            var Boton = '<li><a href="Login.html">Login</a></li>'
+        }
+        document.getElementById("Saludo").innerHTML = Saludo
+        document.getElementById("Session").innerHTML = Boton
+    }
+</script>
+</html>

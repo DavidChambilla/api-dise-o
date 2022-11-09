@@ -1,0 +1,204 @@
+/*aplicando estilos*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../IMG/fondoMovistar.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 66px;
+}
+
+
+header{
+    background-color: #343a40;
+    text-align: right;
+    padding-bottom: 5px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+
+
+ul{
+    list-style-type: none;
+    background: #343a40;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    display: inline-block;
+    margin: 4px 20px;
+}
+
+li a{
+    text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+li a:hover{
+    border-bottom: 7px solid #ffffff;
+}
+
+.logo{
+    width: 150px;
+    display: flex;
+    float: left;
+    margin-left: 30px;
+    
+}
+.columna1{
+  float: left;
+  background-color: white;
+  width: 600px;
+  height: 400px;
+  margin: 15px;
+  padding: auto;
+
+}
+.columna2{
+  float: right;
+  background-color: white;
+  width: 600px;
+  height: 400px;
+  margin: 15px;
+  padding: auto;
+
+}
+
+.boton{
+    color: white;
+    background: green;
+}
+
+/*----------------------nosotros estilos--------------------------------*/
+/*mision y vision seccion*/
+.mision-vision{
+    background: #fff;
+    padding: 20px;
+    width: 60%;
+    margin: 50px auto;
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+}
+
+.mision-vision img{
+    width: 28%;
+}
+
+.cont-text{
+    padding: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.cont-misv{
+    display: flex;
+    padding: 20px;
+    width: 100%;
+}
+
+.misv-card{
+    width: 50%;
+    margin: 15px;
+    text-align: center;
+    padding: 20px;
+}
+
+.cont-misv img{
+    width: 28%;
+}
+
+/*seccion beneficios*/
+.beneficios{
+    background: #fff;
+    padding: 50px;
+    width: 60%;
+    margin: 50px auto;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.cont-benef{
+    width: 100%;
+    padding: 30px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.benef-card{
+    background: #A13EA1;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 30px;
+    width: 50%;
+    color: #fff;
+}
+
+/*seccion integrantes*/
+.integrantes{
+    background: #fff;
+    padding: 50px;
+    width: 60%;
+    margin: 50px auto;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.cont-int{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+}
+
+.int-card{
+    padding: 20px;
+}
+
+.img-icon{
+    width: 140px;
+    border-radius: 100%;
+}
+
+/*----------footer------*/
+.footer{
+    background-color: #1F1F24;
+    color: #fff;
+    display: flex;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.315);
+}
+
+.cont-footer{
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    width: 50%;
+    margin: 70px;
+}
+
+.copyright{
+    font-size: 15px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.315);
+    padding: 18px;
+    background: #1F1F24;
+}
